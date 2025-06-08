@@ -1,1 +1,35 @@
+/* General font and spacing */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+#container {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* Header and section styling */
+h1, h2, h3, h4 {
+    background-color: #98fb98; /* my scheme i looked up a light or pale green */
+    color: #2f4f4f;
+    border: 1px solid #D6A800;
+    padding: 10px;
+}
+
+/* Link styling */
+a {
+    color: #7b68ee; /* link styles color */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+    background-color: #ff7f7f;
+}
+
+a:visited {
+    color: #4b0082; /* visited color */
+}
 
