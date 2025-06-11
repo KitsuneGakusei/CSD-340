@@ -47,3 +47,10 @@ figcaption {
   font-size: 0.75em;
   margin-top: 8px;
 }
+/* Return link style - floated to the right like in 3.3 */
+.return-link {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  text-align: right;
+}
