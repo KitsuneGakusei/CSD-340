@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Crystal Long
+    Professor Sue Sampson
+    Assignment 9.3
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <script>
+        var emotion = "happiness";
+        var dimples = "dimples";
+        var stars = "stars";
+        var eyes = "eyes";
+    </script>
+</head>
+
+<body>
+    <h1>Assignment 9.3: JavaScript - Part 1</h1>
+
+    <p>Your face is like a map of <span id="emotion">_________</span>, each feature a landmark I've grown to know well.  
+    The lines of your smile chart the way back home, and the look in your eyes tells stories without words.</p>
+
+    <p>The smile that leads into your <span id="dimples">_________</span>, playful and warm, softens the harshest days.  
+    There's a comfort in your laugh, like sunshine after rain, or music that hums gently in the background.</p>
+
+    <p>Your freckles smattered like <span id="stars">_________</span> across a night sky, scattered perfectly by the universe.  
+    Each one a spark, a note in a celestial map, guiding me gently toward the truth found in your gaze.</p>
+
+    <p>Guiding me towards your bright and shining <span id="eyes">_________</span>, where calm resides and love reflects.  
+    In your eyes, I find courage, clarity, and the kind of peace that doesn’t need to be explained.</p>
+
+    <p>
+        <button onclick="document.getElementById('emotion').innerHTML = emotion">Reveal "happiness"</button>
+        <button onclick="document.getElementById('dimples').innerHTML = dimples">Reveal "dimples"</button>
+        <button onclick="document.getElementById('stars').innerHTML = stars">Reveal "stars"</button>
+        <button onclick="document.getElementById('eyes').innerHTML = eyes">Reveal "eyes"</button>
+    </p>
+</body>
+</html>
