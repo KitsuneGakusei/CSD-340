@@ -1,0 +1,93 @@
+<!-- Crystal Long
+ 7/20/2025  
+ Module 11_2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSD 340 Web Development with HTML and CSS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #cce7be; /* Green background */
+    }
+
+    h2 {
+      margin-top: 20px;
+      font-weight: normal;
+    }
+
+    input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      background-color: #d8bee6; /* Complementary button color */
+      border: none;
+      border-radius: 5px;
+    }
+
+    #output {
+      margin-top: 30px;
+      text-align: left;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Assignment 11.2: JavaScript - Part 3</h1>
+  <h2>To Do List</h2>
+
+  <input type="text" id="userInput" placeholder="Enter item here">
+  <br>
+  <button onclick="addItem()">Add</button>
+  <button onclick="deleteLastItem()">Delete Last Entry</button>
+  <button onclick="displayItems()">Display</button>
+
+  <div id="output"></div>
+
+  <script>
+    let items = [];
+
+    function addItem() {
+      let input = document.getElementById("userInput").value;
+      if (input.trim() !== "") {
+        items.push(input);
+        alert(`"${input}" added at position ${items.length}`);
+        document.getElementById("userInput").value = ""; // clear input
+      } else {
+        alert("Please enter a value before adding.");
+      }
+    }
+
+    function deleteLastItem() {
+      if (items.length > 0) {
+        let removed = items.pop();
+        alert(`"${removed}" was removed from the list.`);
+      } else {
+        alert("There are no items to delete.");
+      }
+    }
+
+    function displayItems() {
+      let output = "<ol>";
+      for (let i = 0; i < items.length; i++) {
+        output += `<li>${items[i]}</li>`;
+      }
+      output += "</ol>";
+      document.getElementById("output").innerHTML = output;
+    }
+  </script>
+</body>
+</html>
+<!-- End of Crystal Long - Module 11_2 -->
+
