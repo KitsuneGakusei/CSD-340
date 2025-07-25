@@ -1,0 +1,147 @@
+<!-- Crystal Long - Module 12_2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSD 340 Web Development with HTML and CSS</title>
+  <link rel="stylesheet" href="Long_Mod3_3.css">
+ <style>
+  body {
+    background-color: #4b1c45;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+  }
+
+ .button-container {
+  margin-top: 10px;
+  text-align: left; /* aligns buttons to the left */
+  padding-left: 10px; /* slight left padding inside the box */
+}
+
+button {
+  margin: 5px;
+  padding: 6px 14px;
+  font-size: 0.8em; /* smaller than the h3 */
+  cursor: pointer;
+  background-color: #c7d9ea;
+  border: none;
+  border-radius: 5px;
+  color: #000000;
+}
+
+button:hover {
+  background-color: #b0c9e0;
+}
+
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  .border-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  /* ⬇️ Paste this at the bottom of the <style> block */
+  .return-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  .return-link a {
+    color: #66ccff;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: transparent;
+    padding: 8px 12px;
+    border-radius: 5px;
+  }
+
+  .return-link a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+
+
+</head>
+<body>
+  <div id="container">
+
+    <h1>Assignment 12.2: JavaScript - Part 4</h1>
+
+    <div class="left-div">
+      <div class="border-box">
+        <h3>Top 10 Favorite Books</h3>
+        <div class="button-container">
+          <button onclick="displayAscending()">Top to Bottom</button>
+          <button onclick="displayDescending()">Bottom to Top</button>
+        </div>
+        <ol id="bookList">
+          <!-- JavaScript will populate this list -->
+        </ol>
+      </div>
+    </div>
+
+    <div class="right-div">
+      <div class="border-box">
+        <h3>5 Things I’ve Learned Since the Course Started</h3>
+        <ul>
+          <li>HTML comment in code and it's difference to Java or Python</li>
+          <li>Linking our CSS to the HTML the correct way</li>
+          <li>Use GitHub Pages, still learning more on</li>
+          <li>CSS play with page design and colors</li>
+          <li>Creating the page layouts</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="return-link">
+      <a href="../index.html">Return to Landing Page</a>
+    </div>
+
+  </div>
+
+  <script>
+    const books = [
+      "Harry Potter Original book series",
+      "Fruits Basket Series",
+      "The Faerie Path Series",
+      "The Complete Tales & Poems of Edgar Allan Poe",
+      "Splintered Series",
+      "Beautiful Strangers",
+      "A Dark Faerie Tale Series -Alexia Purdy",
+      "Into The Darkwood Complete Trilogy",
+      "The Glass Sky Series",
+      "I, Coriander"
+    ];
+
+    function displayBooks(bookArray) {
+      const list = document.getElementById("bookList");
+      list.innerHTML = ""; // Clear previous content
+      bookArray.forEach(book => {
+        const li = document.createElement("li");
+        li.textContent = book;
+        list.appendChild(li);
+      });
+    }
+
+    function displayAscending() {
+      const sortedBooks = [...books].sort();
+      displayBooks(sortedBooks);
+    }
+
+    function displayDescending() {
+      const sortedBooks = [...books].sort().reverse();
+      displayBooks(sortedBooks);
+    }
+
+    // Show original list on load
+    window.onload = () => displayBooks(books);
+  </script>
+</body>
+</html>
